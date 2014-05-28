@@ -45,6 +45,7 @@
 @property SKPhysicsJoint* legLFootLJoint;
 @property SKPhysicsJoint* legRFootRJoint;
 
+
 @end
 
 @implementation MyScene
@@ -233,6 +234,8 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        
+        
         self.scaleMode = SKSceneScaleModeAspectFit;
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         [self.physicsBody setRestitution:0];
@@ -245,85 +248,196 @@
     return self;
 }
 
--(void)touchesBegan:(NSSet *)touch withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    
-//    if (_torso.physicsBody.dynamic) {
-//        
-//        [_torso.physicsBody setDynamic:NO];
-//        
-//        //        [_head.physicsBody setDynamic:NO];
-//        //
-//        //        [_armL.physicsBody setDynamic:NO];
-//        //        [_armR.physicsBody setDynamic:NO];
-//        //
-//        //        [_handL.physicsBody setDynamic:NO];
-//        //        [_handR.physicsBody setDynamic:NO];
-//        //
-//        //        [_legL.physicsBody setDynamic:NO];
-//        //        [_legR.physicsBody setDynamic:NO];
-//        //        [_footL.physicsBody setDynamic:NO];
-//        //        [_footR.physicsBody setDynamic:NO];
-//    }
-    
-    //UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInNode:self];
-    //CGPoint location2 = [touch locationInNode:self];
-    NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
-    for (UITouch *touch in [event allTouches]) {
-        for (SKNode *node in nodes) {
-            //go through nodes, get the zPosition if you want
-            //int nodePos = node.zPosition;
-            
-            
-            
-
-            
-            //or check the node against your nodes
-            if ([node.name isEqualToString:@"torso"]) {
-                [_torso setPosition:location];
-            }
-            if ([node.name isEqualToString:@"square1"]) {
-                [_square1.physicsBody setDynamic:NO];
-                [_square1 setPosition:location];
-            }
-            if ([node.name isEqualToString:@"square2"]) {
-                [_square2.physicsBody setDynamic:NO];
-                [_square2 setPosition:location2];
-            }
-            
-            
-        }
-        
-//        if (CGRectIntersectsRect(location.x, _torso.frame)) {
-//            [_torso setPosition:location];
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    /* Called when a touch begins */
+//    
+//    
+////    if (_torso.physicsBody.dynamic) {
+////        
+////        [_torso.physicsBody setDynamic:NO];
+////        
+////        //        [_head.physicsBody setDynamic:NO];
+////        //
+////        //        [_armL.physicsBody setDynamic:NO];
+////        //        [_armR.physicsBody setDynamic:NO];
+////        //
+////        //        [_handL.physicsBody setDynamic:NO];
+////        //        [_handR.physicsBody setDynamic:NO];
+////        //
+////        //        [_legL.physicsBody setDynamic:NO];
+////        //        [_legR.physicsBody setDynamic:NO];
+////        //        [_footL.physicsBody setDynamic:NO];
+////        //        [_footR.physicsBody setDynamic:NO];
+////    }
+//    
+//    UITouch *touch = [touches anyObject];
+//    CGPoint location = [touches locationInNode:self];
+//    //CGPoint location2 = [touch locationInNode:self];
+//    //NSArray *nodes = [self nodesAtPoint:[touches locationInNode:self]];
+//    for (UITouch *touch in [event allTouches]) {
+//        //for (SKNode *node in nodes) {
+//            //go through nodes, get the zPosition if you want
+//            //int nodePos = node.zPosition;
+//            
+//            
+//            
+//
+//            
+//            //or check the node against your nodes
+//            if ([node.name isEqualToString:@"torso"]) {
+//                [_torso setPosition:location];
+//            }
+//            if ([node.name isEqualToString:@"square1"]) {
+//                [_square1.physicsBody setDynamic:NO];
+//                [_square1 setPosition:location];
+//            }
+//            if ([node.name isEqualToString:@"square2"]) {
+//                [_square2.physicsBody setDynamic:NO];
+//                [_square2 setPosition:location2];
+//            }
+//            
+//            
 //        }
-        //[_torso setPosition:location];
+//        
+////        if (CGRectIntersectsRect(location.x, _torso.frame)) {
+////            [_torso setPosition:location];
+////        }
+//        //[_torso setPosition:location];
+//    }
+//}
+
+
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    //UITouch *touch = [touches anyObject];
+////    CGPoint location = [touch locationInNode:self];
+////    CGPoint location2 = [touch locationInNode:self];
+//    //NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+//    for (UITouch *touch in [event allTouches]) {
+//        
+//        CGPoint location = [touch locationInNode:self];
+//        CGPoint location2 = [touch locationInNode:self];
+//    //for (SKNode *node in nodes) {
+//        //go through nodes, get the zPosition if you want
+//        //int nodePos = node.zPosition;
+//        
+//        //or check the node against your nodes
+//        
+//        if (_square1.position.x < location.x + 50 && _square1.position.x > location.x - 50 &&
+//             
+//             _square1.position.y < location.y + 50 && _square1.position.y > location.y - 50) {
+//            areWeTouchingSquare1 = YES;
+//            NSLog(@"touching square 1");
+//        }
+//        if (_square2.position.x < location2.x + 50 && _square2.position.x > location2.x - 50 &&
+//            
+//            _square2.position.y < location2.y + 50 && _square2.position.y > location2.y - 50) {
+//            areWeTouchingSquare2 = YES;
+//            NSLog(@"touching square 2");
+//        }
+//    }
+//}
+
+
+
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //UITouch *touch = [touches anyObject];
+    
+    //NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+    for (UITouch *touch in touches) {
+        CGPoint location = [touch locationInNode:self];
+        CGPoint location2 = [touch locationInNode:self];
+        
+       NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+        //go through nodes, get the zPosition if you want
+        //int nodePos = node.zPosition;
+        
+        //or check the node against your nodes
+        for (SKNode *node in nodes) {
+            
+        if ([node.name isEqualToString:@"square1"]) {
+            areWeTouchingSquare1 = YES;
+            NSLog(@"touching square 1");
+        }
+        if ([node.name isEqualToString:@"square2"]) {
+            areWeTouchingSquare2 = YES;
+            NSLog(@"touching square 2");
+        }
     }
 }
+}
+
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInNode:self];
-    CGPoint location2 = [touch locationInNode:self];
-    NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
-        for (SKNode *node in nodes) {
-            //go through nodes, get the zPosition if you want
-            //int nodePos = node.zPosition;
+    
+    for (UITouch *touch in touches) {
+       //NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+        CGPoint location = [touch locationInNode:self];
+        CGPoint location2 = [touch locationInNode:self];
+        
+        //go through nodes, get the zPosition if you want
+        //int nodePos = node.zPosition;
+        //for (SKNode *node in nodes) {
             
-            //or check the node against your nodes
-            if ([node.name isEqualToString:@"torso"]) {
-                [_torso setPosition:location];
-            }
-            if ([node.name isEqualToString:@"square1"]) {
-                [_square1 setPosition:location];
-            }
-            if ([node.name isEqualToString:@"square2"]) {
-                [_square2 setPosition:location2];
-            }
+        //or check the node against your nodes
+        if (areWeTouchingSquare1 == YES) {
+            [_square1.physicsBody setDynamic:NO];
+            [_square1 setPosition:location];
+        }
+        if (areWeTouchingSquare2 == YES) {
+            [_square2.physicsBody setDynamic:NO];
+            [_square2 setPosition:location2];
+        }
     }
 }
+//}
+
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//    
+//    for (UITouch *touch in [event allTouches]) {
+//        CGPoint location = [touch locationInNode:self];
+//        CGPoint location2 = [touch locationInNode:self];
+//   
+//        //go through nodes, get the zPosition if you want
+//        //int nodePos = node.zPosition;
+//        
+//        //or check the node against your nodes
+//        if (areWeTouchingSquare1 == YES) {
+//            [_square1.physicsBody setDynamic:NO];
+//            [_square1 setPosition:location];
+//        }
+//        if (areWeTouchingSquare2 == YES) {
+//            [_square2.physicsBody setDynamic:NO];
+//            [_square2 setPosition:location2];
+//        }
+//    }
+//}
+
+
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//    UITouch *touch = [touches anyObject];
+//    CGPoint location = [touch locationInNode:self];
+//    CGPoint location2 = [touch locationInNode:self];
+//    NSArray *nodes = [self nodesAtPoint:[touch locationInNode:self]];
+//        for (SKNode *node in nodes) {
+//            //go through nodes, get the zPosition if you want
+//            //int nodePos = node.zPosition;
+//            
+//            //or check the node against your nodes
+//            if ([node.name isEqualToString:@"torso"]) {
+//                [_torso setPosition:location];
+//            }
+//            if ([node.name isEqualToString:@"square1"]) {
+//                [_square1 setPosition:location];
+//            }
+//            if ([node.name isEqualToString:@"square2"]) {
+//                [_square2 setPosition:location2];
+//            }
+//    }
+//}
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event  {
     

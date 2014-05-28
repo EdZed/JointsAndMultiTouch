@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6BFC99D7-2922-4975-9029-320999FF21CB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JointsCharacterTests</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>29B45D25-0088-4318-A4E7-FBCB3B16B0F9</key>
+		<string>https://github.com/EdZed/JointsAndMultiTouch.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JointsCharacterTests/JointsCharacterTests.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>29B45D25-0088-4318-A4E7-FBCB3B16B0F9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/EdZed/JointsAndMultiTouch.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>29B45D25-0088-4318-A4E7-FBCB3B16B0F9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>29B45D25-0088-4318-A4E7-FBCB3B16B0F9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JointsAndMultiTouch</string>
+		</dict>
+	</array>
+</dict>
+</plist>

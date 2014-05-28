@@ -9,5 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface MyScene : SKScene
-
+{
+    
+    BOOL areWeTouchingSquare1;
+    BOOL areWeTouchingSquare2;
+    
+}
 @end
